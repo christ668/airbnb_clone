@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {ApolloProvider} from 'react-apollo';
+import { client } from './apollo';
+import { Routes } from './routers';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
+  <React.StrictMode>    
+    <ApolloProvider client = {client}>
+      <Routes />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
